@@ -78,4 +78,3 @@ export default function CreateUserModal({ onClose, onAddUser }: Props) {
     </div>
   );
 }
-
