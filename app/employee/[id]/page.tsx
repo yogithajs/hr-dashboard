@@ -36,6 +36,8 @@ export default function EmployeeDetailPage() {
 useEffect(() => {
   if (id) {
     const userIndex = parseInt(id as string) - 1;
+    const custom = customNames[userIndex] || { firstName: 'User', lastName: '', email: '' };
+
 
     fetch(`https://dummyjson.com/users/${id}`)
       .then((res) => res.json())
@@ -78,7 +80,7 @@ useEffect(() => {
       <div className="mt-4 space-y-3">
         <p><strong>Email:</strong> {user.email}</p>
         <p><strong>Phone:</strong> {user.phone}</p>
-        <p><strong>Address:</strong> {user.address.address}, {user.address.city}</p>
+        <p><strong>Address:</strong> {user.address?.address}, {user.address?.city}</p>
         <p><strong>Department:</strong> {user.department}</p>
         <p><strong>Bio:</strong> {user.bio}</p>
         <div className="flex items-center gap-2">
