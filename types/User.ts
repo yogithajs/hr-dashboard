@@ -6,7 +6,7 @@ export interface User {
   age: number;
   department: string;
   phone: string;
-  performance: number; // not optional now
+  performance: number;
   address: {
     address: string;
     city: string;

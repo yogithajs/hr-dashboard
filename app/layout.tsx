@@ -1,38 +1,8 @@
-// import './globals.css'
-// import Navbar from '../components/navbar'
-// import type { Metadata } from 'next'
-
-// export const metadata: Metadata = {
-//   title: 'HR Dashboard',
-//   description: 'Employee Management System',
-// }
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode
-// }) {
-//   return (
-//     <html lang="en">
-//       <body className="bg-gray-100 min-h-screen">
-//         <Navbar />
-//         <div className="max-w-7xl mx-auto">{children}</div>
-//       </body>
-//     </html>
-//   )
-// }
-
-
-
-
-
-
-
-
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from '../context/AuthContext';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

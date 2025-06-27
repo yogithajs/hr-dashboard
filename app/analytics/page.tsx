@@ -44,7 +44,6 @@ export default function AnalyticsPage() {
 
   if (!mounted) return null;
 
-  // === Department-wise Average Ratings ===
   const departmentData: { [key: string]: number[] } = {};
   users.forEach((user) => {
     if (!departmentData[user.department]) {
@@ -66,20 +65,19 @@ export default function AnalyticsPage() {
       {
         label: 'Avg Performance Rating',
         data: avgRatings,
-        backgroundColor: 'rgba(59, 130, 246, 0.7)', // blue-500
+        backgroundColor: 'rgba(59, 130, 246, 0.7)',
         borderRadius: 5,
       },
     ],
   };
 
-  // === Mock Bookmark Trends ===
   const lineChartData = {
     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
     datasets: [
       {
         label: 'Bookmarks Added',
-        data: [2, 5, 7, 4], // mocked trend
-        borderColor: 'rgba(34,197,94,1)', // green-500
+        data: [2, 5, 7, 4], 
+        borderColor: 'rgba(34,197,94,1)', 
         backgroundColor: 'rgba(34,197,94,0.2)',
         fill: true,
         tension: 0.3,
